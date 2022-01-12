@@ -6,12 +6,24 @@
 
 export interface ContactsPlugin {
   getPermissions(): Promise<PermissionStatus>;
+  hasPermission(): Promise<GrantStatus>;
   getContacts(): Promise<{ contacts: Contact[] }>;
   saveContact(contact: NewContact): Promise<void>;
 }
 
 export interface PermissionStatus {
   granted: boolean;
+}
+
+export enum PermissionGrantStatus {
+  NOT_DETERMINED = 0,
+  RESTRICTED = 1,
+  DENIED = 2,
+  AUTHORIZED = 3,
+}
+
+export interface GrantStatus {
+  status: PermissionGrantStatus;
 }
 
 export interface PhoneNumber {

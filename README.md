@@ -223,6 +223,7 @@ MIT
 <docgen-index>
 
 * [`getPermissions()`](#getpermissions)
+* [`hasPermission()`](#haspermission)
 * [`getContacts()`](#getcontacts)
 * [`saveContact(...)`](#savecontact)
 * [Interfaces](#interfaces)
@@ -237,6 +238,17 @@ MIT
 
 ```typescript
 getPermissions() => any
+```
+
+**Returns:** <code>any</code>
+
+--------------------
+
+
+### hasPermission()
+
+```typescript
+hasPermission() => any
 ```
 
 **Returns:** <code>any</code>
@@ -278,6 +290,13 @@ saveContact(contact: NewContact) => any
 | Prop          | Type                 |
 | ------------- | -------------------- |
 | **`granted`** | <code>boolean</code> |
+
+
+#### GrantStatus
+
+| Prop         | Type                                                                    |
+| ------------ | ----------------------------------------------------------------------- |
+| **`status`** | <code><a href="#permissiongrantstatus">PermissionGrantStatus</a></code> |
 
 
 #### Contact
@@ -361,6 +380,16 @@ New contact schema.
 
 
 ### Enums
+
+
+#### PermissionGrantStatus
+
+| Members              | Value          |
+| -------------------- | -------------- |
+| **`NOT_DETERMINED`** | <code>0</code> |
+| **`RESTRICTED`**     | <code>1</code> |
+| **`DENIED`**         | <code>2</code> |
+| **`AUTHORIZED`**     | <code>3</code> |
 
 
 #### ContactType
